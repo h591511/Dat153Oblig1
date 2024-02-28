@@ -31,6 +31,7 @@ public class GalleryItem implements Serializable {
     }
 
     public boolean isDrawableResource() {
+
         return imageResId != -1;
     }
 

@@ -1,4 +1,5 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -37,7 +38,6 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <!-- Tilbakemeldings-TextView -->
         <TextView
             android:id="@+id/feedbackTextView"
             android:layout_width="match_parent"
@@ -46,7 +46,6 @@
             android:gravity="center"
             android:textSize="18sp" />
 
-        <!-- Score-TextView -->
         <TextView
             android:id="@+id/scoreTextView"
             android:layout_width="match_parent"

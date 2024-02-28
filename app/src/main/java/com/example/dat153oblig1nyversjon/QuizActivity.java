@@ -67,13 +67,13 @@ public class QuizActivity extends AppCompatActivity {
                     .listener(new RequestListener<Drawable>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                            Log.e("QuizActivity", "Failed to load image", e);
+                            Log.e("QuizActivity", "Feil", e);
                             return false;
                         }
 
                         @Override
                         public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                            Log.d("QuizActivity", "Image loaded successfully");
+                            Log.d("QuizActivity", "Riktig");
                             return false;
                         }
                     })
@@ -116,7 +116,7 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             feedbackTextView.setText("Feil. Riktig svar: " + correctAnswer);
         }
-        scoreTextView.setText("Score: " + score + "/ Forsøk: " + attempts);
+        scoreTextView.setText("Poeng: " + score + "/ Forsøk: " + attempts);
 
         feedbackTextView.postDelayed(new Runnable() {
             @Override
