@@ -17,7 +17,7 @@ import java.util.List;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHolder> {
     private List<GalleryItem> galleryItems;
-    private Context context;
+    private final Context context;
 
     public GalleryAdapter(List<GalleryItem> galleryItems, Context context) {
         this.galleryItems = galleryItems;
@@ -42,6 +42,10 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
             Uri imageUri = Uri.parse(item.getImagePath());
             Glide.with(context).load(imageUri).into(holder.imageView);
         }
+    }
+    public void setList(List<GalleryItem> galleryItems) {
+        this.galleryItems = galleryItems;
+        notifyDataSetChanged();
     }
 
     @Override

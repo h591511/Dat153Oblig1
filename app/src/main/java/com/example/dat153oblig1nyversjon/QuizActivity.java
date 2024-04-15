@@ -30,7 +30,7 @@ public class QuizActivity extends AppCompatActivity {
     private List<GalleryItem> items;
     private ImageView quizImageView;
     private Button choice1, choice2, choice3;
-    private String correctAnswer;
+    private static String correctAnswer;
     private int score = 0, attempts = 0;
     private TextView feedbackTextView, scoreTextView;
 
@@ -125,5 +125,8 @@ public class QuizActivity extends AppCompatActivity {
             }
         }, 1500);
     }
+  //  public static GalleryItem getCorrectAnswer() {
+  //      return correctAnswer;
+ //   }
 
 }

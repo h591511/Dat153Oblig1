@@ -11,8 +11,10 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +23,7 @@ import java.util.List;
 public class GalleryActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+   // private PhotoDAO dao;
     private GalleryAdapter adapter;
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -29,8 +32,11 @@ public class GalleryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
+      //  AppDatabase ad = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "gallery-item").build();
+        //dao = ad.photoDAO();
+
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
 
         adapter = new GalleryAdapter(GalleryDataManager.getInstance().getGalleryItems(), this);

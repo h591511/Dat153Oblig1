@@ -1,11 +1,20 @@
 package com.example.dat153oblig1nyversjon;
 
-import java.io.Serializable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class GalleryItem implements Serializable {
+import java.io.Serializable;
+@Entity
+public class GalleryItem  {
+    @ColumnInfo(name = "name")
     private String name;
+    @PrimaryKey(autoGenerate = true)
     private int imageResId = -1;
+    @ColumnInfo(name = "imagePath")
     private String imagePath = null;
+
+    public GalleryItem() {}
 
     public GalleryItem(String name, int imageResId) {
         this.name = name;
@@ -22,8 +31,20 @@ public class GalleryItem implements Serializable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getImageResId() {
         return imageResId;
+    }
+
+    public void setImageResId(int imageResId) {
+        this.imageResId = imageResId;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public String getImagePath() {
@@ -34,5 +55,6 @@ public class GalleryItem implements Serializable {
 
         return imageResId != -1;
     }
+
 
 }
